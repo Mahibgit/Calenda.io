@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode-toggle-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.dark-mode-toggle {
+    width: 20px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dark-mode-toggle::after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transition: left 0.3s ease;
+}
+
+.dark-mode-toggle::before {
+    content: '🌞';
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #ffdb5c;
+}
+
+.dark-mode-toggle-container input[type="checkbox"] {
+    display: none;
+}
+
+.dark-mode-toggle-container input[type="checkbox"]:checked + .dark-mode-toggle::after {
+    left: 20px;
+}
+
+.dark-mode-toggle::before {
+    content: '🌜';
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 120px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-container label {
+    margin-right: 10px;
+}
+
+.input-container input,
+.input-container select,
+.input-container input[type="color"] {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: calc(100% + 12px); 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#calendar-container.show-calendar {
+    opacity: 1;
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.weekend {
+    background-color: #f7f7f7;
+}
+
+.current-date {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.today {
+    font-weight: bold;
+    color: #ff5722;
+}
